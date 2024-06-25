@@ -58,13 +58,13 @@ class _AuthScreenState extends State<AuthScreen> {
 
         // debugPrint(imageUrl);
         // debugPrint(userCredentials.toString());
-        storageRef.putFile(_selectedImage!);
+        // storageRef.putFile(_selectedImage!);
 
         await FirebaseFirestore.instance
             .collection('users')
             .doc(userCredentials.user!.uid)
             .set({
-          'user-name': _enteredUsername,
+          'username': _enteredUsername,
           'email': _enteredEmail,
           'image_URL': imageUrl,
         });
